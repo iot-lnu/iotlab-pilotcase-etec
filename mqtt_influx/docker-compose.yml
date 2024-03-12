@@ -1,0 +1,14 @@
+version: '2.2'
+services:
+  my_python_app:
+    build: .
+    environment:
+      MQTT_USER: 
+      MQTT_PASSWORD: 
+      MQTT_HOST: 
+      MQTT_PORT: 8883
+      MQTT_TOPIC: 
+      INFLUXDB_TOKEN: 
+      INFLUXDB_HOST: "http://139.162.164.160:8086"
+      INFLUXDB_ORG: "iotlnu"
+      INFLUXDB_BUCKET: "energy"
