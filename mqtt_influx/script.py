@@ -22,15 +22,16 @@ def load_prices():
     # Todays date
     today = date.today()
     day = today.strftime("%d")
-    month = today.strftime("%m") 
+    month = today.strftime("%m")
     year = today.strftime("%Y")
-    
+
     # Make the request
-    r = requests.get(f"http://spot.utilitarian.io/electricity/SE4/{year}/{month}/{day}")
+    r = requests.get(f"https://www.elprisetjustnu.se/api/v1/prices/{year}/{month}-{day}_SE4.json")
+    #r = requests.get(f"http://spot.utilitarian.io/electricity/SE4/{year}/{month}/{day}")
     if r.status_code == 200:
         for x in json.loads(r.text):
-            json_date = x["timestamp"]
-            json_value = x["value"]
+            json_date = x["time_start"]
+            json_value = x["SEK_per_kWh"]
 
             # Convert string to datetime object
             date_obj = datetime.fromisoformat(json_date)
