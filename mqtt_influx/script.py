@@ -69,7 +69,8 @@ def on_message(client, userdata, msg):
         # Convert message payload to string and then to JSON
         message_str = msg.payload.decode("utf-8")
         message_data = json.loads(message_str[:-1])
-        
+        message_data["topic"] = msg.topic
+
         # Get price
         price = get_price(message_data["timestamp"])
         name = message_data["topic"].split("/")[-1] + "_" + message_data["topic"].split("/")[-2] 
