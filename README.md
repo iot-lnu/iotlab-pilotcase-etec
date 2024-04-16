@@ -6,9 +6,9 @@ Ett hållbart tekniskt utbildningscentrum inom elteknik- och automation i Oskars
 
 ## Projektets mål 
 
-Projektets mål är att utveckla en online-applikation som visualiserar elanvändning i olika delar av byggnaden på ETEC och kvantifierar den i realtid med ett aktuelltpris. Till exempel bör dashboarden visa - "just nu kostar en hissresa på 2 minuter X antal SEK". Det bör också vara möjligt att analysera historiska data för att se vilka elbehov som kostade mest för att hitta sätt att optimera energianvändningen i byggnaden.
+Projektets mål är att utveckla en online-applikation som visualiserar elanvändning i olika delar av byggnaden på ETEC och kvantifierar den i realtid med ett aktuelltpris. Till exempel bör dashboarden visa - "just nu kostar en hissresa X antal SEK". Det bör också vara möjligt att analysera historiska data för att se vilka elbehov som kostade mest för att hitta sätt att optimera energianvändningen i byggnaden.
 
-## Data - ETEC 
+## Data - El användning 
 
 MQTT Server API 
 
@@ -16,10 +16,24 @@ Strukturen är enligt följande:
 SITE/BYGGNAD/RUM/FUNKTION/PLACERING/MÄTDATA
  
 Exempelvis
-ETEC/ETEC/114/WAGO_EDM/D1/AL1
-ETEC/CONTAINER/WAGO_EDM/A1D/AL1
-ETEC/T1/TEORI/TMP/PT1000
+- ETEC/ETEC/114/WAGO_EDM/D1/AL1
+- ETEC/CONTAINER/WAGO_EDM/A1D/AL1
+- ETEC/T1/TEORI/TMP/PT1000
 
-## Data - Elpris API 
-Vårt förslag är att använda Elpris API från [Elprisetjustnu.se](https://www.elprisetjustnu.se/elpris-api ) 
+Mätvärden som är tillgänliga i MQQTn just nu:
+- Grupp1 - Elpanna
+- Grupp 11 - Bergvärme
+- Grupp 12 - Ventilation LA1
+- Grupp 13 - Hiss
+- Grupp 18 - Ventilation LA2
+- Grupp 19 - Kyla LA2
+  
+Utöver dessa mätvärden finns det även data tillgänglig från en funktion som kallas 'Container' samt en central kallad 'A1D'. Elementet av störst intresse är elförbrukning mätt i watt, vilket är representerat av W_TOT värdet, exempel: "ETEC/ETEC/ETEC/114/WAGO_EDM/D1/GR1/W_TOT".
+
+## Data - Elpriser API 
+Vi hämtar realtidspriser i SE4 zonen från Elpris API [Elprisetjustnu.se](https://www.elprisetjustnu.se/elpris-api ). Observera att dessa priser endast är en uppskattning då de inte inkluderar kostnader för eltransport, abonnemang och liknande.
+
+
+## Data - Temperatur
+I MQTT:n finns även mätvärden från två analoga termometrar, dessa representeras som Temp_n (nord) och Temp_s (syd). "
 
