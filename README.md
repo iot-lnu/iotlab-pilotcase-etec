@@ -20,7 +20,7 @@ Exempelvis
 - ETEC/CONTAINER/WAGO_EDM/A1D/AL1
 - ETEC/T1/TEORI/TMP/PT1000
 
-Mätvärden som är tillgänliga i MQQTn just nu:
+Mätvärden som är tillgänliga i MQTTn just nu:
 - Grupp1 - Elpanna
 - Grupp 11 - Bergvärme
 - Grupp 12 - Ventilation LA1
