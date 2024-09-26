@@ -41,6 +41,6 @@ I MQTT:n finns även mätvärden från två analoga termometrar, dessa represent
 
 Efter våra initiala experiment, tillgängliga under `"first_pilot"` mappen, har vi beslutat att fortsätta med en **Influx** + **Grafana** stack för detta projekt. Denna lösning levererar en kraftfull kombination för realtidsdataanalys och visualisering av stora datamängder. InfluxDB är särskilt utformad för att lagra tidsserie-data, vilket gör den till en ideal partner för IoT-data som kräver snabb datainskrivning och effektiv lagring. När det gäller visualisering, är Grafana heltäckande för att skapa informativa och intuitiva dashboards med användarvänliga drag-and-drop-verktyg som kräver ingen programmering, vilket gör det tillgängligt för användare på alla teknikerfarenhetsnivåer. 
 
-- Instruktioner för hur man ställer in dataströmningspipelinen från MQQT till Influx finns tillgängliga [här](https://github.com/iot-lnu/iotlab-pilotcase-etec/blob/main/mqtt_influx_import/INSTRUCTIONS.md)
+- Instruktioner för hur man ställer in dataströmningspipelinen från MQTT till Influx finns tillgängliga [här](https://github.com/iot-lnu/iotlab-pilotcase-etec/blob/main/mqtt_influx_import/INSTRUCTIONS.md)
 - Flux queries och exempel på Grafana visualiseringar finns här
 
